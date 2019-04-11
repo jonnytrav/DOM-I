@@ -104,18 +104,14 @@ appendedA.textContent = "Resources";
 prependedA.textContent = "Sign In";
 
 //Inserting variables//
-nav.prepend(prependedA);
-navAccess.appendChild(appendedA);
+navAccess.prepend(prependedA);
+navAccess.appendChild(appendedA); 
 
 //Matching up styles//
 appendedA.style.color = 'green';
 prependedA.style.color = 'green';
 
-let footer = document.getElementsByTagName('footer')[0];
-
-copyRight = footer.getElementsByTagName('p')[0];
-copyRight.textContent = siteContent["footer"]["copyright"];
-
+document.querySelector('footer p').textContent = siteContent["footer"]["copyright"];
 
  
 
