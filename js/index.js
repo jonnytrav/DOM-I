@@ -38,5 +38,84 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.src = siteContent["cta"]["img-src"];
+
+document.getElementById("middle-img").setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+ 
+//Added text to the heading and nav//
+let navItems = document.querySelectorAll('a');
+navItems[0].textContent = "Services";
+navItems[1].textContent = "Product";
+navItems[2].textContent = "Vision"; 
+navItems[3].textContent = "Features";
+navItems[4].textContent = "About";
+navItems[5].textContent = "Contact";
+
+let heading = document.querySelector('h1');
+heading.textContent = siteContent["cta"]["h1"];
+
+document.querySelector("button").textContent = "Get Started";
+
+//Adding text to the "text-content" divs//
+let textBoxes = document.getElementsByClassName("text-content");
+textBoxes[0].getElementsByTagName('h4')[0].textContent = siteContent["main-content"]["features-h4"];
+textBoxes[0].getElementsByTagName('p')[0].textContent = siteContent["main-content"]["features-content"];
+
+textBoxes[1].getElementsByTagName('h4')[0].textContent = siteContent["main-content"]["about-h4"];
+textBoxes[1].getElementsByTagName('p')[0].textContent = siteContent["main-content"]["about-content"];
+
+textBoxes[2].getElementsByTagName('h4')[0].textContent = siteContent["main-content"]["services-h4"];
+textBoxes[2].getElementsByTagName('p')[0].textContent = siteContent["main-content"]["services-content"];
+
+textBoxes[3].getElementsByTagName('h4')[0].textContent = siteContent["main-content"]["product-h4"];
+textBoxes[3].getElementsByTagName('p')[0].textContent = siteContent["main-content"]["product-content"];
+
+textBoxes[4].getElementsByTagName('h4')[0].textContent = siteContent["main-content"]["vision-h4"];
+textBoxes[4].getElementsByTagName('p')[0].textContent = siteContent["main-content"]["vision-content"];
+
+let contact = document.getElementsByClassName('contact')[0];
+contact.getElementsByTagName('h4')[0].textContent = siteContent["contact"]["contact-h4"];
+contact.getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"];
+contact.getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"];
+contact.getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"];
+
+navItems[0].style.color = 'green';
+navItems[1].style.color = 'green';
+navItems[2].style.color = 'green';
+navItems[3].style.color = 'green';
+navItems[4].style.color = 'green';
+navItems[5].style.color = 'green';
+
+
+//Easy access to nav//
+let navAccess = document.getElementsByTagName('nav')[0];
+
+//Establishing variables to be prepended and appended//
+let appendedA = document.createElement("a");
+let prependedA = document.createElement("a");
+
+//Adding content between the <a> tags//
+appendedA.textContent = "Resources";
+prependedA.textContent = "Sign In";
+
+//Inserting variables//
+nav.prepend(prependedA);
+navAccess.appendChild(appendedA);
+
+//Matching up styles//
+appendedA.style.color = 'green';
+prependedA.style.color = 'green';
+
+let footer = document.getElementsByTagName('footer')[0];
+
+copyRight = footer.getElementsByTagName('p')[0];
+copyRight.textContent = siteContent["footer"]["copyright"];
+
+
+ 
+
